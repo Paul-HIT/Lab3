@@ -18,7 +18,6 @@ from django.contrib import admin
 from books.views import search, details, delete, edit, new, newauthor
 urlpatterns = [
 	url(r'^admin/', include(admin.site.urls)),
-	url('^$', search),
 	url(r'^([0-9]+)/details/$', details),
 	url(r'^([^/]+)/([0-9]+)/delete/$', delete),
 	url(r'^([^/]+)/([0-9]+)/edit/$', edit),
