@@ -1,0 +1,23 @@
+<html>
+<br/>
+<br/>
+<style type="text/css">
+		body{background:#D2D460;text-align:center;}
+		div{width:778px;margin:0 auto;background:#fff;text-align:center;}
+</style>
+<p>您要搜索的作者是:<strong> {{q}} </strong></p>
+{% if books %}
+<p>共找到 {{ books|length }} 本书：</p>
+<ul>
+{% for book in books %}
+<a href= "/{{ book.ISBN }}/details">{{ book.Title }}</a>
+&nbsp&nbsp&nbsp<a href= "/{{q}}/{{ book.ISBN }}/delete">删除</a>
+&nbsp&nbsp&nbsp<a href= "/{{q}}/{{ book.ISBN }}/edit">编辑</a>
+<br/>
+<br/>
+{% endfor %}
+</ul>
+{% else %}
+<strong>没有找到该作者的任何书籍.</strong>
+{% endif %}
+</html>

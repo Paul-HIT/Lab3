@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>MyBookLab</title>
+</head>
+<body>
+<style type="text/css">
+		body{background:#D2D460;text-align:center;}
+		div{width:778px;margin:0 auto;background:#fff;text-align:center;}
+</style>
+<br/>
+<br/>
+<strong>输入作者姓名查询:</strong>
+{% if errors %}
+<ul>
+{% for error in errors %}
+<li>{{ error }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+<form action="" method="get">
+<input type="text" name="q">
+<input type="submit" value="查询">
+</form>
+<a href= "/new"><strong>新增一本书</strong></a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<body>
+<style type="text/css">
+		body{background:#D2D460;text-align:center;}
+		div{width:778px;margin:0 auto;background:#fff;text-align:center;}
+</style>
+<br/>
+<br/>
+<strong>你确定要删除这本《 </strong>{{books}} <strong>》？</strong>
+
+<form action="" method="post">
+{% csrf_token %}
+<input type="submit" value="确定"/>
+</form>
+
+<a href="#" onclick="window.history.back(); return false;" class="button cancel-link">带我返回</a>
+
+</body>
+</html>

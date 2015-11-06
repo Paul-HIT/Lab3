@@ -1,0 +1,36 @@
+<html>
+<body>
+<style type="text/css">
+		body{background:#D2D460;text-align:left;}
+		div{width:778px;margin:0 auto;background:#D2D460;text-align:left;}
+</style>
+<a href="#" onclick="window.history.back(); return false;" class="button cancel-link">返 回</a>
+<br/>
+<br/>
+
+<strong>书目信息：</strong>
+<div style="text-indent:4em">
+{% for book in books %}
+<p>  ISBN ： {{book.ISBN}} </p>
+<p> 书  名： {{book.Title}} </p>
+<p> 作  者： {{book.AuthorID.Name}}</p>
+<p> 出版社： {{book.Publisher}}</p>
+<p>出版时间： {{book.PublishDate  | date:"Y-m-j" }}</p>
+<p> 价  格： {{book.Price}}</p>
+{% endfor %}
+</div>
+
+<br/>
+<br/>
+
+<strong>作家简介：</strong>
+<div style="text-indent:4em">
+{% for book in books %}
+<p>编号： {{book.AuthorID.AuthorID}} </p>
+<p>姓名： {{book.AuthorID.Name}} </p>
+<p>年龄： {{book.AuthorID.Age}} </p>
+<p>国籍： {{book.AuthorID.Country}} </p>
+{% endfor %}
+</div>
+</body>
+</html>

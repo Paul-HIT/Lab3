@@ -1,0 +1,31 @@
+<html>
+<style type="text/css">
+		body{background:#D2D460;text-align:left;}
+		div{width:778px;margin:0 auto;background:#fff;text-align:left;}
+</style>
+<body>
+{% if Error %}
+{%for e in Error%}
+<strong style="font-family:verdana;font-size:80%;color:red"> *{{e}}</strong>
+<br/>
+{%endfor%}
+{% endif %}
+<form action="" method="post">
+{% csrf_token %}
+
+<p>作家ID:</p>
+<input type="text" name="AuthorID"/>
+<br/><br/>
+<p>姓名:</p>
+<input type="text" name="Name"/>
+<br/><br/>
+<p>年龄:</p>
+<input type="text" name="Age"/>
+<br/><br/>
+<p>国籍:</p>
+<input type="text" name="Country"/>
+<br/><br/>
+<input type="submit" value="确认添加"/>
+</form>
+</body>
+</html>

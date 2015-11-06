@@ -1,0 +1,28 @@
+<html>
+<style type="text/css">
+		body{background:#D2D460;text-align:left;}
+		div{width:778px;margin:0 auto;background:#fff;text-align:left;}
+</style>
+
+<form action="" method="post">
+{% csrf_token %}
+
+<p>{{books.Title}}:</p>
+<br/>
+<nobr>作家姓名：</nobr>
+<input type="text" name="Name" value={{books.AuthorID.Name}} />
+<br/><br/>
+<nobr>出版社：</nobr>
+<input type="text" name="publisher" value= {{ books.Publisher }} />
+<br/><br/>
+<nobr>出版日期：</nobr>
+<input type="date" name="PD" value={{ books.PublishDate | date:"Y-m-j" }} />
+<nobr>格式如：YY-MM-DD</nobr>
+<br/><br/>
+<nobr>价格：</nobr>
+<input type="text" name="Price" value = {{books.Price}} />
+
+<br/><br/>
+<input type="submit" value="确定修改"/>
+</form>
+</html>

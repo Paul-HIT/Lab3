@@ -1,0 +1,49 @@
+<html>
+<style type="text/css">
+		body{background:#D2D460;text-align:left;}
+		div{width:778px;margin:0 auto;background:#fff;text-align:left;}
+</style>
+{% if Error %}
+{%for e in Error%}
+<strong style="font-family:verdana;font-size:80%;color:red"> *{{e}}</strong>
+<br/>
+{%endfor%}
+{% endif %}
+<form action="" method="post">
+{% csrf_token %}
+<p>书名:</p>
+<input type="text" name="Title" />
+<br/><br/>
+<nobr>作者：(从以下作者中选择：
+{%for anAuthor in Author%}
+{{anAuthor}}&nbsp&nbsp/&nbsp&nbsp
+{%endfor%})</nobr>
+<br/>
+<input type="text" name="AuthorID"/>
+
+<br/>
+<br/>
+<nobr>添加新作者</nobr>
+<a class="related-widget-wrapper-link add-related" id="add_id_AuthorID"
+            href="/newauthor"
+            title="Add another author">
+            <img src="/static/admin/img/icon_addlink.gif" width="10" height="10"
+                alt="Add"/>
+        </a>
+
+<br/><br/>
+<p>ISBN编号：(格式如：018)</p>
+<input type="text" name="ISBN"/>
+<br/><br/>
+<p>出版社：</p>
+<input type="text" name="Publisher"/>
+<br/><br/>
+<p>出版日期：(格式如：2015年1月5日记为2015-01-05)</p>
+<input type="text" name="PD"/>
+<br/><br/>
+<p>价格：</p>
+<input type="text" name="Price"/>
+<br/><br/>
+<input type="submit" value="确认添加"/>
+</form>
+</html>
