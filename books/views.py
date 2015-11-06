@@ -3,7 +3,7 @@ from django.shortcuts import render, RequestContext
 # Create your views here.
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
-from books.models import Book, Author
+
 
 def search(request):
 	errors = []
